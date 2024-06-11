@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý nhân viên</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quản lý nhân viên</h1>
+        <form id="employeeForm" data-mode="">
+            <div class="form-group">
+                <label for="employeeId">Mã nhân viên</label>
+                <input type="text" id="employeeId">
+                <div class="error" id="employeeIdError"></div>
+            </div>
+            <div class="form-group">
+                <label for="employeeName">Tên nhân viên</label>
+                <input type="text" id="employeeName">
+                <div class="error" id="employeeNameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="position">Chức vụ</label>
+                <select id="position">
+                    <option value="1">Nhân viên</option>
+                    <option value="2">Quản lý</option>
+                    <option value="3">Giám đốc</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="basicSalary">Lương cơ bản</label>
+                <input type="number" id="basicSalary">
+                <div class="error" id="basicSalaryError"></div>
+            </div>
+            <div class="form-group">
+                <label for="workingHours">Số giờ làm trong tháng</label>
+                <input type="number" id="workingHours">
+                <div class="error" id="workingHoursError"></div>
+            </div>
+            <div class="form-group">
+                <label for="salaryMonth">Bản Lương Tháng/Năm</label>
+                <input type="month" id="salaryMonth">
+            </div>
+            <div class="buttons">
+                <button type="submit">Thêm nhân viên</button>
+                <button type="button" id="exportButton">Export Excel</button>
+            </div>
+        </form>
+        <table id="employeeTable" class="hidden">
+            <thead>
+                <tr>
+                    <th>Mã nhân viên</th>
+                    <th>Tên nhân viên</th>
+                    <th>Chức vụ</th>
+                    <th>Lương cơ bản</th>
+                    <th>Tổng lương</th>
+                    <th>Giờ làm/tháng</th>
+                    <th>Xếp loại nhân viên</th>
+                    <th>Bản Lương Tháng/Năm</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.17.0/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
